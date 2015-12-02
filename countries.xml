@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<countries>
+<country id="1">
+<name> China </name>
+<population> 1,354,040,000 </population>
+<capital>Beijing</capital>
+<currency>CNY</currency>
+</country>
+<country id="2">
+<name> Japan </name>
+<population> 127,340,000 </population>
+<capital>Tokyo</capital>
+<currency>YEN</currency>
+</country>
+</countries>

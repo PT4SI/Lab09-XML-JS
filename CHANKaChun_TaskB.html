@@ -1,0 +1,33 @@
+<html>
+
+<body onload="loadXMLDoc()">
+ <p id="demo"></p>
+ <script type="text/javascript">
+ 
+ function loadXMLDoc()
+ {
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+ if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+ myFunction(xmlhttp);
+ }
+ };
+  xmlhttp.open("GET", "countries.xml" , true);
+ xmlhttp.send();
+ }
+
+ 
+function myFunction(xml) {
+var i, x, xmlDoc, html;
+xmlDoc = xml.responseXML;
+x = xmlDoc.getElementsByTagName("country");
+html = "<h1>First Country</h1>";
+html += "<b>Name : </b>" + x[0].getElementsByTagName("name")[0].childNodes[0].nodeValue + "<b><br />Population : </b>" + x[0].getElementsByTagName("population")[0].childNodes[0].nodeValue +
+"<b><br />Capital : </b>" + x[0].getElementsByTagName("capital")[0].childNodes[0].nodeValue + "</b>";
+document.getElementById("demo").innerHTML = html;
+}
+
+</script>
+</body>
+
+</html>
