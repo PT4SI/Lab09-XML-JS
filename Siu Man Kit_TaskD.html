@@ -4,7 +4,6 @@
  <p id="demo"></p>
  <script type="text/javascript">
  //xml;
- var id = 1;
  function loadXMLDoc()
  {
 var xmlhttp = new XMLHttpRequest();
@@ -18,6 +17,10 @@ xmlhttp.onreadystatechange = function() {
  xmlhttp.send();
  }
 
+function next()
+{
+
+} 
  
 function myFunction(id,xml) {
 var i, x, xml, html;
@@ -26,23 +29,11 @@ x = xml.getElementsByTagName("country");
 html = "<h1>First Country</h1>";
 html += "<b>Name : </b>" + x[id].getElementsByTagName("name")[0].childNodes[0].nodeValue + "<b><br />Population : </b>" + x[id].getElementsByTagName("population")[0].childNodes[0].nodeValue +
 "<b><br />Capital : </b>" + x[id].getElementsByTagName("capital")[0].childNodes[0].nodeValue + "</b>";
-html += "<button type='button' onclick=\"myFunction(previous(),xml)\">previous</button>";
-html += "<button type='button'  onclick=\"myFunction(next(),xml)\">next</button>";
+html += "<button type='button' onclick=\"myFunction(0,xml)\">previous</button>";
+html += "<button type='button'  onclick=\"myFunction(1,xml)\">next</button>";
 document.getElementById("demo").innerHTML = html;
 }
-function next() {
-	return id++;
-}
-function previous() {
-	if(id == 1) {
-		id = 1;
-		return id;
-	}
-	if(id>1) {
-		id = id-1;
-		return id;
-	}
-}
+
 </script>
 </body>
 
